@@ -23,7 +23,7 @@ gulp.task('clearAppDestinationFolder',
             .pipe(clean());
     });
 
-gulp.task('moveToLibs', function (done) {
+gulp.task('moveToLibs', function () {
     gulp.src([
       'node_modules/es6-shim/es6-shim.min.js',
       'node_modules/systemjs/dist/system-polyfils.js',
@@ -50,6 +50,6 @@ gulp.task('moveToLibs', function (done) {
       'node_modules/bootstrap/dist/css/bootstrap.css'
     ]).pipe(gulp.dest('./wwwroot/libs/css'));
 
-    //copy typescript files for debugging purposes
+    //copy typescript files for debugging purposes - would not deploy to production environment
     gulp.src(['app/**/*']).pipe(gulp.dest('./wwwroot/app'));
 });
